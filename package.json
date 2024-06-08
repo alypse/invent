@@ -3,7 +3,8 @@
     "start": "npx ts-node index.ts",
     "build": "npx tsc && npm run build-frontend",
     "build-frontend": "cd frontend && npm run build-windows",
-    "install": "pushd frontend && npm i && popd && npm i"
+    "install-core": "npm i",
+    "install-all": "pushd frontend && npm i && popd && npm i"
   },
   "dependencies": {
     "@types/express": "^4.17.21",

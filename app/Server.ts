@@ -14,7 +14,7 @@ export class Server {
         });
 
         this.app.get("*", (req: Request, res: Response): void => {
-            res.sendFile(path.resolve("./") + "/build/frontend/index.html");
+            res.sendFile(path.resolve("./") + "/frontend/index.html");
         });
     }
     public start(port: number): void {

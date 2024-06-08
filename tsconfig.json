@@ -9,8 +9,10 @@
     "lib": ["es2016"],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "strict": true,
   },
   "include": [
-    "**.ts"
+    "*.ts"
   ]
 }

@@ -1,13 +1,27 @@
-import { useState } from 'react';
 
-export default function Home() {
-  const [count, setCount] = useState(0);
+import React, { useEffect, useState } from 'react';
+import './Home.css';
 
-  return (
-    <div>
-      <h1>Home</h1>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
-  );
+
+export const Home = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/users')
+            .then((response) => response.json())
+            .then((data) => setUsers(data));
+    }, []);
+    
+    return (
+        <div className="App">
+            <h1>Home</h1>
+            <ul>
+            {users.map((user: any, index: number) => (
+                <li key={index}>{user.name} is {user.age} years old</li>
+            ))}
+            </ul>
+        </div>
+    );
 }
+
+

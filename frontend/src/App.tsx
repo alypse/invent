@@ -1,17 +1,24 @@
-// import logo from '/logo.svg';
+
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Home } from './components/Home';
+import { Users } from './components/Users';
 
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Here is the react thing!
-        </p>
-      </header>
-    </div>
-  );
+enum VIEWS {
+    HOME = 'home',
+    USERS = 'users'
 }
 
-export default App;
+
+export const App = () => {
+    const [view, setView] = useState(VIEWS.HOME);
+    return (
+        <div className="App">
+            <h1>Invent</h1>
+            <button onClick={() => setView(VIEWS.HOME)}>Home</button>
+            <button onClick={() => setView(VIEWS.USERS)}>Users</button>
+            {view === VIEWS.HOME && <Home />}
+            {view === VIEWS.USERS && <Users />}
+        </div>
+  );
+}

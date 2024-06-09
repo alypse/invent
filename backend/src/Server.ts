@@ -1,27 +1,25 @@
-import express, {Express, Request, Response} from "express";
-import path from "path";
+import express, { Request, Response } from "express";
+import * as process from "process";
 
-export class Server {
+const app = express();
+const port = process.env.PORT || 8080;
 
-    private app: Express;
-    constructor(app: Express) {
-        this.app = app;
+const users = [
+    {
+        name: 'Alex',
+        age: 25
+    },
+    {
+        name: 'Sam',
+        age: 30
 
-        this.app.use(express.static(path.resolve("./") + "/build/frontend"));
-
-        this.app.get("/api", (req: Request, res: Response): void => {
-            res.send("You have reached the API");
-        });
-
-        this.app.get("/api/secret", (req: Request, res: Response): void => {
-            res.send("You have reached the secret API");
-        });
-
-        this.app.get("*", (req: Request, res: Response): void => {
-            res.sendFile(path.resolve("./") + "/frontend/index.html");
-        });
     }
-    public start(port: number): void {
-        this.app.listen(port, () => console.log(`Server listening on port ${port}!`));
-    }
-}
+];
+
+app.get('/api/users', (req: Request, res: Response) => {
+    res.send(users);
+});
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});

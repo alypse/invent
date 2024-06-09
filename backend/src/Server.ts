@@ -10,7 +10,11 @@ export class Server {
         this.app.use(express.static(path.resolve("./") + "/build/frontend"));
 
         this.app.get("/api", (req: Request, res: Response): void => {
-            res.send("You have reached the API!");
+            res.send("You have reached the API");
+        });
+
+        this.app.get("/api/secret", (req: Request, res: Response): void => {
+            res.send("You have reached the secret API");
         });
 
         this.app.get("*", (req: Request, res: Response): void => {

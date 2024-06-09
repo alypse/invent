@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "node16",
     "baseUrl": "./",
-    "outDir": "build",
-    "target": "es2016",
-    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src/",
+    "target": "es2022",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
-    "lib": ["es2016"],
+    "lib": ["es2022"],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "strict": true,
   },
   "include": [
-    "*.ts"
+    "src/*.ts"
   ]
 }

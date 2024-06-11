@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 
@@ -13,13 +12,17 @@ export const Home = () => {
     }, []);
     
     return (
-        <div className="App">
-            <h1>Home</h1>
-            <ul>
-            {users.map((user: any, index: number) => (
-                <li key={index}>{user.name} is {user.age} years old</li>
-            ))}
-            </ul>
+        <div className="Container">
+            <div className="Header">
+                <h1>Home</h1>
+            </div>
+            <div className="Content">
+                <ul>
+                {users.map((user: any, index: number) => (
+                    <li key={index}>{user.name} is {user.age} years old</li>
+                ))}
+                </ul>
+            </div>
         </div>
     );
 }

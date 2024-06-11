@@ -1,23 +1,14 @@
 import express, { Request, Response } from "express";
 import * as process from "process";
+import { users } from "./data/test-data";
 
 const app = express();
 const port = process.env.PORT || 8080;
 
-const users = [
-    {
-        name: 'Alex',
-        age: 25
-    },
-    {
-        name: 'Sam',
-        age: 30
-
-    }
-];
 
 app.get('/api/users', (req: Request, res: Response) => {
     res.send(users);
+    console.log(`Request made at ${Date.now()}`);
 });
 
 app.listen(port, () => {

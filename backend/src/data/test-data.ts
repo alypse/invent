@@ -18,3 +18,10 @@ export const users = [
         age: 40
     }
 ];
+
+export const greetings = [
+    'Hello',
+    'Hi',
+    'Hey',
+    'Howdy'
+];

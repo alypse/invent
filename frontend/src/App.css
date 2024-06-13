@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+* {
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #e3e3e3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#HeaderMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #233142;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#HeaderTitle {
+  font-size: 1.5em;
+  color: #f95959;
+  padding: 0 20px;
+  border-left: 2px solid #f95959;
+  background-color: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.Nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+    color: #e3e3e3;
+}
+
+.View {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+
 }
 
-.App-link {
-  color: #61dafb;
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+
+
+.button-60 {
+align-items: center;
+appearance: none;
+background-color: transparent;
+border: transparent;
+border-radius: .375em;
+box-shadow: none;
+box-sizing: border-box;
+color: #e3e3e3;
+cursor: pointer;
+display: inline-flex;
+font-size: 1rem;
+height: 1.5em;
+justify-content: center;
+line-height: 1.5;
+position: relative;
+text-align: center;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
 }

@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import './Home.css';
 
-export default function Home() {
-  const [count, setCount] = useState(0);
+export const Home = () => {
 
-  return (
-    <div>
-      <h1>Home</h1>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
-  );
+    return (
+        <div className="Container">
+            <div className="Header">Welcome to Invent!</div>
+            <div className="Content">
+                <span>Click on the Users button above to see a list of users.</span>
+                <span>Click on the Home button above to return to this page.</span>
+            </div>
+        </div>
+    );
 }

@@ -1,30 +1,14 @@
-import React, { useEffect, useState } from 'react';
 import './Home.css';
 
-
 export const Home = () => {
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        fetch('/api/users')
-            .then((response) => response.json())
-            .then((data) => setUsers(data));
-    }, []);
-    
     return (
         <div className="Container">
-            <div className="Header">
-                <h1>Home</h1>
-            </div>
+            <div className="Header">Welcome to Invent!</div>
             <div className="Content">
-                <ul>
-                {users.map((user: any, index: number) => (
-                    <li key={index}>{user.name} is {user.age} years old</li>
-                ))}
-                </ul>
+                <span>Click on the Users button above to see a list of users.</span>
+                <span>Click on the Home button above to return to this page.</span>
             </div>
         </div>
     );
 }
-
-

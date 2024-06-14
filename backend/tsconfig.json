@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "module": "node16",
-    "baseUrl": "./",
-    "outDir": "./dist",
+    "module": "NodeNext",
+    "outDir": "dist",
     "rootDir": "./src/",
     "target": "es2022",
     "moduleResolution": "node16",
@@ -10,10 +9,12 @@
     "lib": ["es2022"],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
     "strict": true,
   },
   "include": [
-    "src/*.ts"
+    "src/**/*"
+  ],
+  "exclude": [
+      "node_modules", "dist"
   ]
 }

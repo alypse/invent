@@ -1,23 +1,29 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import * as process from "process";
-import { users, greetings } from "./data/test-data";
-
+import * as dotenv from "dotenv";
+import mongoose from "mongoose";
+import { router } from "./routes/items.route";
 const app = express();
+
+// Middleware
+dotenv.config();
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 const port = process.env.PORT || 8080;
 
+// Routes
+app.use('/api/items', router);
 
-app.get('/api/users', (req: Request, res: Response) => {
-    res.send(users);
-    console.log(`Request made at ${Date.now()}`);
-});
+// Connect to MongoDB
+mongoose.connect(<string> process.env.URI)
+    .then(() => { console.log('Connected to MongoDB');
+        app.listen(port, () => {
+            console.log(`Server listening on port: ${port}`);
+        });
+    })
+    .catch((err) => {
+        console.error(err, "error!")
+    });
 
-app.get('/api/hello', (req: Request, res: Response) => {
-    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-    res.send(greeting);
-    console.log(greeting, 'greeting');
-    // console.log(`Request made at ${Date.now()}`);
-});
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});

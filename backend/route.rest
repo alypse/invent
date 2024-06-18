@@ -1,0 +1,28 @@
+### GET all items
+GET http://localhost:8080/api/items
+
+### GET item by id
+GET http://localhost:8080/api/items/667067300aa8f19caa0e3763
+
+### POST
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{
+    "name": "test item",
+    "description": "thingy description",
+    "price": 1
+}
+
+### PUT
+PUT http://localhost:8080/api/items/66706a02a346e918076e5c68
+Content-Type: application/json
+
+{
+    "name": "put test",
+    "description": "put test description",
+    "price": 2.34
+}
+
+### DELETE
+DELETE http://localhost:8080/api/items/667180a820a18e22120c7666

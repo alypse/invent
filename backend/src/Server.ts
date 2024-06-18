@@ -1,11 +1,11 @@
 import express, {Request, Response} from "express";
 import * as process from "process";
+import * as dotenv from "dotenv";
 import mongoose from "mongoose";
 import { Item } from "./models/items.model";
 
-require('dotenv').config();
 
-
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 app.use(express.json());
@@ -51,7 +51,7 @@ app.post('/api/items', async (req: Request, res: Response) => {
 // Update an item
 // todo: Add route here later
 
-mongoose.connect("mongodb+srv://@invent-test.yfagz5s.mongodb.net/items_test?retryWrites=true&w=majority&appName=Invent-test") //todo: use dotenv
+mongoose.connect(<string> process.env.URI)
     .then(() => { console.log('Connected to MongoDB');
         app.listen(port, () => {
             console.log(`Server listening on port: ${port}`);

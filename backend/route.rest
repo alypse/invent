@@ -13,3 +13,13 @@ Content-Type: application/json
     "description": "thingy description",
     "price": 1
 }
+
+### PUT
+PUT http://localhost:8080/api/items/667067300aa8f19caa0e3763
+Content-Type: application/json
+
+{
+    "name": "put test",
+    "description": "put test description",
+    "price": 1
+}

@@ -49,7 +49,23 @@ app.post('/api/items', async (req: Request, res: Response) => {
 });
 
 // Update an item
-// todo: Add route here later
+app.put('/api/items/:id', async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id;
+        const item = await Item.findByIdAndUpdate(id, req.body);
+
+        if (!item) {
+            res.status(404).json({error: 'Item not found'});
+        }
+        const updatedItem = await Item.findById(id);
+        res.status(200).json(updatedItem);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error: error});
+    }
+});
+
+
 
 mongoose.connect(<string> process.env.URI)
     .then(() => { console.log('Connected to MongoDB');

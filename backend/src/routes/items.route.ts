@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { Item } from "../models/items.model";
 import { getItems, getItem, createItem, updateItem, deleteItem } from "../controllers/item.controller";
 
 export const router = Router();
